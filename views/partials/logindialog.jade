@@ -1,0 +1,19 @@
+md-dialog 
+  form
+    md-toolbar
+      .md-toolbar-tools
+        h2
+          | Log In
+    md-dialog-content
+      .md-dialog-content
+        md-input-container
+          label
+            | User
+          input(ng-model="user")
+        md-input-container
+          label
+            | Password
+          input(ng-model="password", type="password")
+    md-dialog-actions(layout="row")
+      md-button(ng-click="answer(user)" style="margin-right:20px;")
+        | Log In
