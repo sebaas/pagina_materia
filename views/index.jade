@@ -1,31 +1,20 @@
 extends layout
 block body
-  section(layout="column", flex="", ng-controller="AppCtrl")
+  div(layout="column" layout-fill ng-controller="AppCtrl")
     md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id="left")
       md-toolbar.md-theme-indigo
         h1.md-toolbar-tools
           | Menú
       md-content(layout-padding="")
         .md-menu-container.md-active.md-clickable(aria-hidden="false")
-          md-menu-content(width="4", role="menu")
-            md-menu-item
-              button.md-button.md-ink-ripple(type="button", role="menuitem", aria-label="Redial", ng-click="redirectTo('introduccion')")
-                md-icon(md-font-library="material-icons")
-                  | home
-                span 
-                  | Introducción
-            md-menu-item
-              button.md-button.md-ink-ripple(type="button", role="menuitem", aria-label="Redial", ng-click="redirectTo('programa')")
-                md-icon(md-font-library="material-icons")
-                  | label
-                span 
-                  | Programa
-            md-menu-item
-              button.md-button.md-ink-ripple(type="button", role="menuitem", aria-label="Redial", ng-click="redirectTo('bibliografia')")
-                md-icon(md-font-library="material-icons")
-                  | book
-                span 
-                  | Bibliografía
+          div(flex layout="row")
+            md-menu-content(width="4", role="menu")
+              md-menu-item(ng-repeat="menu in menus")
+                button.md-button.md-ink-ripple.active(type="button", role="menuitem", aria-label="Redial", ng-click="redirectTo(menu.link)")
+                  md-icon(md-font-library="material-icons")
+                    | {{menu.icon}}
+                  span 
+                    | {{menu.name}}
     md-toolbar.md-whiteframe-glow-z1.site-content-toolbar
       .md-toolbar-tools
         md-button.md-icon-button(aria-label="Settings",ng-click="toggleLeft()")
@@ -45,9 +34,11 @@ block body
 
   script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js")
   script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js")
+  script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-resource.js")
   script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-animate.js")
   script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-aria.js")
   script(src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.4/angular-material.js")
+
   script(src='javascripts/app.js')
   script(src='javascripts/controller.js')
 

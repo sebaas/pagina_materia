@@ -1,12 +1,11 @@
 'use strict';
 
-/* Controllers */
 
-myApp.controller('AppCtrl', ['$scope', '$mdSidenav', '$log' , '$location', '$mdMedia' , '$mdDialog', function($scope, $mdSidenav, $log, $location, $mdMedia, $mdDialog) {
-  $scope.greeting = 'Hola!';
+myApp.controller('AppCtrl', ['$scope', '$mdSidenav', '$log' , '$location', '$mdMedia' , '$mdDialog', '$resource', function($scope, $mdSidenav, $log, $location, $mdMedia, $mdDialog, $resource) {
+  var Menu = $resource('/api/menu/:id', {id: '@id'});
 
+  $scope.menus = Menu.query()
   $scope.toggleLeft = buildToggler('left');
-
   $scope.isOpenLeft = function(){
     return $mdSidenav('left').isOpen();
   };
@@ -44,8 +43,11 @@ myApp.controller('AppCtrl', ['$scope', '$mdSidenav', '$log' , '$location', '$mdM
 }]);
 
 
-myApp.controller('IntroduccionCtrl', ['$scope', '$mdSidenav', '$log' , function($scope, $mdSidenav, $log) {
-  $scope.name = 'Ingenieria'
+myApp.controller('IntroduccionCtrl', ['$scope', '$resource', '$log' , function($scope, $resource, $log) {
+  var Introduccion = $resource('/api/introduccion/:id', {id: '@id'});
+  $scope.intros = Introduccion.query(function() {
+    $scope.intro = $scope.intros[0];
+  });
 }]);
 
 myApp.controller('BibliografiaCtrl', ['$scope', '$mdSidenav', '$log' , function($scope, $mdSidenav, $log) {
@@ -54,6 +56,16 @@ myApp.controller('BibliografiaCtrl', ['$scope', '$mdSidenav', '$log' , function(
 
 myApp.controller('ProgramaCtrl', ['$scope', '$mdSidenav', '$log' , function($scope, $mdSidenav, $log) {
   $scope.name = 'Ingenieria'
+}]);
+
+myApp.controller('EditCtrl', ['$scope', '$resource', '$log' , function($scope, $resource, $log) {
+  var Introduccion = $resource('/api/introduccion/:id', {id: '@id'});
+  $scope.intros = Introduccion.query(function() {
+    $scope.intro = $scope.intros[0];
+  });
+  $scope.saveIntro = function() {
+    $scope.intro.$save()
+  }
 }]);
 
 

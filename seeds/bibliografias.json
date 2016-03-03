@@ -1,0 +1,25 @@
+[
+  {
+    "materia":"ingenieriadesoftware2",
+    "categoria":"General",
+    "requerida":true,
+    "titulo":"A Formal Approach to Software Architecture",
+    "link":"http://example.org",
+    "escritores":"Allen R.",
+    "ano":"1997",
+    "extras":"Tesis doctoral, Carnegie Mellon School of Computer Science",
+    "tag":"allensoftwarearchitecture",
+    "importance":"1"
+  },
+  {
+    "materia":"ingenieriadesoftware2",
+    "categoria":"General",
+    "requerida":true,
+    "titulo":"Software architecture in practice",
+    "link":"http://example.org",
+    "escritores":"Bass, L., Clements, P., Kazman, R.",
+    "ano":"2003",
+    "extras":"Tesis doctoral, Carnegie Mellon School of Computer Science",
+    "tag":"basssoftwarearchitecture"
+  }
+]

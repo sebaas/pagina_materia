@@ -1,60 +1,3 @@
-// /**
-//  * Module dependencies
-//  */
-
-// var express = require('express'),
-//   routes = require('./routes'),
-//   api = require('./routes/api'),
-//   http = require('http'),
-//   path = require('path');
-
-
-// var app = module.exports = express();
-
-// /**
-// * Configuration
-// */
-
-// // all environments
-// app.set('port', process.env.PORT || 3000);
-// app.set('views', __dirname + '/views');
-// app.set('view engine', 'jade');
-// app.use(express.logger('dev'));
-// app.use(express.bodyParser());
-// app.use(express.methodOverride());
-// app.use(express.static(path.join(__dirname, 'public')));
-// app.use(app.router);
-
-// // development only
-// if (app.get('env') === 'development') {
-//    app.use(express.errorHandler());
-// };
-
-// // production only
-// if (app.get('env') === 'production') {
-//   // TODO
-// }; 
-
-
-
-// // Routes
-// app.get('/', routes.index);
-// app.get('/partial/:name', routes.partial);
-
-// // JSON API
-// app.get('/api/name', api.name);
-
-// // redirect all others to the index (HTML5 history)
-// app.get('*', routes.index);
-
-// /**
-// * Start Server
-// */
-
-// http.createServer(app).listen(app.get('port'), function () {
-//   console.log('Express server listening on port ' + app.get('port'));
-// });
-
 // =======================
 // get the packages we need ============
 // =======================
@@ -70,7 +13,8 @@ var path        = require('path');
 var jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var config = require('./config'); // get our config file
 var User   = require('./models/user'); // get our mongoose model
-    
+var Menu   = require('./models/menu');    
+var Introduccion   = require('./models/introduccion'); 
 // =======================
 // configuration =========
 // =======================
@@ -95,26 +39,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', routes.index);
 app.get('/partial/:name', routes.partial);
 
-app.get('/setup', function(req, res) {
-
-  // create a sample user
-  var nick = new User({ 
-    name: 'Nick Cerminara', 
-    password: 'password',
-    admin: true 
-  });
-
-  // save the sample user
-  nick.save(function(err) {
-    if (err) throw err;
-
-    console.log('User saved successfully');
-    res.json({ success: true });
-  });
-});
-// API ROUTES -------------------
-
-// API ROUTES -------------------
 
 // get an instance of the router for api routes
 var apiRoutes = express.Router(); 
@@ -157,37 +81,37 @@ apiRoutes.post('/authenticate', function(req, res) {
   });
 });   
 
-// route middleware to verify a token
-apiRoutes.use(function(req, res, next) {
+// // route middleware to verify a token
+// apiRoutes.use(function(req, res, next) {
 
-  // check header or url parameters or post parameters for token
-  var token = req.body.token || req.query.token || req.headers['x-access-token'];
+//   // check header or url parameters or post parameters for token
+//   var token = req.body.token || req.query.token || req.headers['x-access-token'];
 
-  // decode token
-  if (token) {
+//   // decode token
+//   if (token) {
 
-    // verifies secret and checks exp
-    jwt.verify(token, app.get('superSecret'), function(err, decoded) {      
-      if (err) {
-        return res.json({ success: false, message: 'Failed to authenticate token.' });    
-      } else {
-        // if everything is good, save to request for use in other routes
-        req.decoded = decoded;    
-        next();
-      }
-    });
+//     // verifies secret and checks exp
+//     jwt.verify(token, app.get('superSecret'), function(err, decoded) {      
+//       if (err) {
+//         return res.json({ success: false, message: 'Failed to authenticate token.' });    
+//       } else {
+//         // if everything is good, save to request for use in other routes
+//         req.decoded = decoded;    
+//         next();
+//       }
+//     });
 
-  } else {
+//   } else {
 
-    // if there is no token
-    // return an error
-    return res.status(403).send({ 
-        success: false, 
-        message: 'No token provided.' 
-    });
+//     // if there is no token
+//     // return an error
+//     return res.status(403).send({ 
+//         success: false, 
+//         message: 'No token provided.' 
+//     });
     
-  }
-});
+//   }
+// });
 
 apiRoutes.get('/', function(req, res) {
   res.json({ message: 'Welcome to the coolest API on earth!' });
@@ -197,6 +121,41 @@ apiRoutes.get('/', function(req, res) {
 apiRoutes.get('/users', function(req, res) {
   User.find({}, function(err, users) {
     res.json(users);
+  });
+});  
+
+// route to return all users (GET http://localhost:8080/api/users)
+apiRoutes.get('/menu', function(req, res) {
+  Menu.find({}, function(err, menus) {
+    res.json(menus);
+  });
+});  
+
+// route to return all users (GET http://localhost:8080/api/users)
+apiRoutes.get('/introduccion', function(req, res) {
+  Introduccion.find({}, function(err, introduccion) {
+    res.json(introduccion);
+  });
+});  
+
+apiRoutes.post('/introduccion', function(req, res) {
+  Introduccion.findOne({}, function(err, introduccion) {
+    if (err)
+      res.send(err);
+
+    for (var field in req.body) {
+       if ((field !== '_id') && (field !== '__v')) {
+          if (req.body[field] !== undefined) {
+             introduccion[field] = req.body[field];
+          }  
+       }  
+    }
+
+    introduccion.save(function(err) {
+      if (err)
+        res.send(err);
+      res.json(introduccion);
+    });
   });
 });  
 

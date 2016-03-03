@@ -1,0 +1,31 @@
+md-content(layout-padding)
+  div
+    form(name="userForm")
+      md-input-container.md-block(flex-gt-xs="")
+        label 
+          | Materia
+        input(ng-model="intro.titulo")
+      div(layout-gt-xs="row")
+        md-input-container.md-block(flex-gt-xs="")
+          label 
+            | Facultad
+          input(ng-model="intro.facultad")
+        md-input-container.md-block(flex-gt-xs="")
+          label 
+            | Url
+          input(ng-model="intro.facultad_link")
+      div(layout-gt-xs="row")
+        md-input-container.md-block(flex-gt-xs="")
+          label 
+            | Universidad
+          input(ng-model="intro.universidad")
+        md-input-container.md-block(flex-gt-xs="")
+          label 
+            | Url
+          input(ng-model="intro.universidad_link")
+      md-input-container.md-block
+        label
+          | Resumen
+        textarea(ng-model="intro.resumen" md-maxlength="1000" rows="5" md-select-on-focus="")
+      md-button.md-primary(md-no-ink="", ng-click="saveIntro()")
+        | Done

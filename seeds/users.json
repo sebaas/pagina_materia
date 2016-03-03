@@ -1,0 +1,8 @@
+[
+  {
+    "name": "super_admin",
+    "email": "super@example.org",
+    "password": "123qweasd",
+    "admin": true
+  }
+]
