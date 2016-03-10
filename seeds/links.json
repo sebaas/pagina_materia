@@ -1,0 +1,21 @@
+[
+  {
+    "materia":"ingenieriadesoftware2",
+    "seccion":"General",
+    "titulo": "Cora Research Paper Search.",
+    "descripcion": "Buscador de papers",
+    "categoria":"apuntes",
+    "link":"http://www.fceia.unr.edu.ar/ingsoft/p-diseno.pdf",
+    "tag":"corareseach"
+  },
+  {
+    "materia":"ingenieriadesoftware2",
+    "seccion":"Verificación de software",
+    "titulo": "ORA Canada.",
+    "descripcion": "La empresa que fabrica y distribuye Z/EVES,",
+    "categoria":"software",
+    "link":"http://www.fceia.unr.edu.ar/ingsoft/p-diseno.pdf",
+    "tag":"zevescora"
+  }
+]
+

@@ -13,8 +13,16 @@ var path        = require('path');
 var jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var config = require('./config'); // get our config file
 var User   = require('./models/user'); // get our mongoose model
-var Menu   = require('./models/menu');    
-var Introduccion   = require('./models/introduccion'); 
+var Menu   = require('./models/menu');
+var Link   = require('./models/link');      
+var Introduccion   = require('./models/introduccion');
+var Bibliografia   = require('./models/bibliografia');
+var Programa       = require('./models/programa'); 
+var Docente        = require('./models/docente'); 
+var Material       = require('./models/material'); 
+var Contribucion   = require('./models/contribucion'); 
+var Examen         = require('./models/examen'); 
+// =======================
 // =======================
 // configuration =========
 // =======================
@@ -126,7 +134,7 @@ apiRoutes.get('/users', function(req, res) {
 
 // route to return all users (GET http://localhost:8080/api/users)
 apiRoutes.get('/menu', function(req, res) {
-  Menu.find({}, function(err, menus) {
+  Menu.find({}, null,{ sort:{ order : 1 }}, function(err, menus) {
     res.json(menus);
   });
 });  
@@ -135,6 +143,93 @@ apiRoutes.get('/menu', function(req, res) {
 apiRoutes.get('/introduccion', function(req, res) {
   Introduccion.find({}, function(err, introduccion) {
     res.json(introduccion);
+  });
+});  
+
+// route to return all users (GET http://localhost:8080/api/users)
+apiRoutes.get('/docente', function(req, res) {
+  Docente.find({}, function(err, docente) {
+    res.json(docente);
+  });
+});  
+
+
+apiRoutes.post('/docente', function(req, res) {
+
+  Docente.update({_id: req.body["_id"]}, req.body, {upsert: true, setDefaultsOnInsert: true},function (err) {
+    if (err) {
+      return err;
+    }
+    else {
+      res.json(req.body);
+    }
+  });
+  //create new model
+  // if(req.body["_id"]) {
+  //   Docente.find({_id})
+  // } else {
+  //   var docente = new Docente(req.body);
+
+  //   //save model to MongoDB
+  //   docente.save(function (err) {
+  //     if (err) {
+  //       return err;
+  //     }
+  //     else {
+  //       res.json(docente);
+  //     }
+  //   });
+  // }
+});  
+
+
+// route to return all users (GET http://localhost:8080/api/users)
+apiRoutes.get('/material', function(req, res) {
+  Material.find({}, function(err, material) {
+    res.json(material);
+  });
+});  
+
+// route to return all users (GET http://localhost:8080/api/users)
+apiRoutes.get('/contribucion', function(req, res) {
+  Contribucion.find({}, function(err, contribucion) {
+    res.json(contribucion);
+  });
+});  
+
+// route to return all users (GET http://localhost:8080/api/users)
+apiRoutes.get('/link', function(req, res) {
+  Link.find({}, function(err, link) {
+    res.json(link);
+  });
+});  
+
+// route to return all users (GET http://localhost:8080/api/users)
+apiRoutes.get('/bibliografia', function(req, res) {
+  Bibliografia.find({}, function(err, biblio) {
+    res.json(biblio);
+  });
+});  
+
+
+// route to return all users (GET http://localhost:8080/api/users)
+apiRoutes.get('/examen', function(req, res) {
+  Examen.find({}, function(err, examen) {
+    res.json(examen);
+  });
+});  
+
+// route to return all users (GET http://localhost:8080/api/users)
+apiRoutes.get('/pregunta', function(req, res) {
+  Pregunta.find({}, function(err, pregunta) {
+    res.json(pregunta);
+  });
+});  
+
+
+apiRoutes.get('/programa', function(req, res) {
+  Programa.find({}, function(err, programa) {
+    res.json(programa);
   });
 });  
 

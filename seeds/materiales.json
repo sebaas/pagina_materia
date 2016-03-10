@@ -1,0 +1,18 @@
+[
+  {
+    "materia":"ingenieriadesoftware2",
+    "seccion":"Unidad 1",
+    "titulo":"Práctica 1",
+    "categoria":"practica",
+    "link":"http://www.fceia.unr.edu.ar/ingsoft/p-diseno.pdf",
+    "tag":"practica1"
+  },
+  {
+    "materia":"ingenieriadesoftware2",
+    "seccion":"Unidad 2",
+    "titulo":"Práctica 2",
+    "categoria":"practica",
+    "link":"http://www.fceia.unr.edu.ar/ingsoft/p-patrones.pdf",
+    "tag":"practica2"
+  }
+]

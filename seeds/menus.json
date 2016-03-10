@@ -3,66 +3,88 @@
     "name":"Introducción",
     "link":"introduccion",
     "access":"all",
+    "order":1,
+    "active":true,
     "icon":"home"
   },
   {
     "name":"Programa",
     "link":"programa",
     "access":"all",
+    "order":2,
+    "active":true,
     "icon":"label"
   },
   {
     "name":"Bibliografía",
     "link":"bibliografia",
     "access":"all",
+    "order":3,
+    "active":true,
     "icon":"book"
   },
   {
     "name":"Cronograma",
     "link":"cronograma",
     "access":"logged",
+    "order":7,
+    "active":true,
     "icon":"event"
   },
   {
     "name":"Material",
     "link":"material",
     "access":"all",
+    "order":4,
+    "active":true,
     "icon":"description"
   },
   {
     "name":"Evaluaciones",
     "link":"evaluaciones",
     "access":"all",
+    "order":8,
+    "active":true,
     "icon":"memory"
   },
   {
     "name":"Docentes",
     "link":"docentes",
     "access":"all",
+    "order":5,
+    "active":true,
     "icon":"people"
   },
   {
     "name":"Links",
     "link":"links",
     "access":"all",
+    "order":6,
+    "active":true,
     "icon":"link"
   },
   {
     "name":"Contribuciones",
     "link":"contribuciones",
     "access":"logged",
+    "order":9,
+    "active":true,
     "icon":"add"
   },
   {
     "name":"Foro",
     "link":"foro",
     "access":"logged",
+    "order":10,
+    "active":true,
     "icon":"forum"
   },
   {
     "name":"Edit",
     "link":"edit",
     "access":"admin",
+    "order":11,
+    "active":true,
     "icon":"edit"
   }
 ]

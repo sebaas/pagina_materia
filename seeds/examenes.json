@@ -1,0 +1,30 @@
+[
+  {
+    "materia":"ingenieriadesoftware2",
+    "categoria":"Parcial",
+    "ano":"2016",
+    "fecha":"2016-03-03",
+    "parte":"Parcial 1"
+  },
+  {
+    "materia":"ingenieriadesoftware2",
+    "categoria":"Final",
+    "ano":"2016",
+    "fecha":"2016-02-03",
+    "parte":"Final"
+  },
+  {
+    "materia":"ingenieriadesoftware2",
+    "categoria":"Final",
+    "ano":"2016",
+    "fecha":"2016-02-13",
+    "parte":"Final"
+  },
+  {
+    "materia":"ingenieriadesoftware2",
+    "categoria":"Final",
+    "ano":"2016",
+    "fecha":"2016-02-23",
+    "parte":"Final"
+  }
+]

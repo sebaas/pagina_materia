@@ -2,7 +2,7 @@
   .md-content.layout-padding(flex="90")
     div(layout-gt-xs="row")
       h2.md-display-1
-        | Bibliografía
+        | Material
       span(flex="")
       md-button.md-fab(ng-click="editMode=!editMode")
         md-icon(md-font-library="material-icons")
@@ -10,16 +10,14 @@
     md-list(flex=100)
       md-subheader.md-no-sticky 
         | General
-      md-list-item.md-3-line(ng-repeat="item in biblio")
+      md-list-item.md-2-line.secondary-button-padding(ng-repeat="item in materiales"  ng-click="navigateTo()")
         md-icon(md-font-library="material-icons")
-          | book
-        .md-list-item-text(layout="column")
-          h3 
+          | attachment
+        .md-list-item-text(layout="column") 
+          h3
             | {{ item.titulo }}
           p
-            | {{ item.escritores }}
-          p 
-            | {{ item.ano }}
+            | {{ item.categoria }}
         md-button.md-fab.md-mini(ng-click="delBiblio($index)", ng-show="editMode")
           md-icon(md-font-library="material-icons")
             | remove
@@ -29,4 +27,3 @@
     md-button.md-fab.md-mini(ng-click="addBiblio(header)", ng-show="editMode")
       md-icon(md-font-library="material-icons")
         | add
-

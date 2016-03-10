@@ -1,0 +1,62 @@
+[
+  {
+    "materia":"ingenieriadesoftware2",
+    "cargo":"Titular",
+    "nombre":"Msc Maximiliano Cristia",
+    "email":"mcristia@fceia.unr.edu.ar",
+    "direccion":"Tucuman 1213",
+    "telefono":"49290012",
+    "active":true,
+    "link":"http://linked.in/",
+    "photo_link":"https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg",
+    "tag":"maxicristia"
+  },
+  {
+    "materia":"ingenieriadesoftware2",
+    "cargo":"JTP",
+    "nombre":"Lic Sebastián A. Scandolo",
+    "email":"sebas@fceia.unr.edu.ar",
+    "direccion":"Tucuman 1213",
+    "telefono":"49290012",
+    "active":true,
+    "link":"http://linked.in/",
+    "photo_link":"https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg",
+    "tag":"sebascan"
+  },
+  {
+    "materia":"ingenieriadesoftware2",
+    "cargo":"Auxiliar",
+    "nombre":"Lic. Andrés Krapf",
+    "email":"akrapf@fceia.unr.edu.ar",
+    "direccion":"Tucuman 1213",
+    "telefono":"49290012",
+    "active":true,
+    "link":"http://linked.in/",
+    "photo_link":"https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg",
+    "tag":"andkrapf"
+  },
+  {
+    "materia":"ingenieriadesoftware2",
+    "cargo":"Auxiliar",
+    "nombre":"Lic. Alejandro Hernandez",
+    "email":"aleh@fceia.unr.edu.ar",
+    "direccion":"Tucuman 1213",
+    "telefono":"49290012",
+    "active":false,
+    "link":"http://linked.in/",
+    "photo_link":"https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg",
+    "tag":"aleh"
+  },
+  {
+    "materia":"ingenieriadesoftware2",
+    "cargo":"Auxiliar",
+    "nombre":"Lic. Alejandro Sartorio",
+    "email":"sartorio@fceia.unr.edu.ar",
+    "direccion":"Tucuman 1213",
+    "telefono":"49290012",
+    "active":true,
+    "link":"http://linked.in/",
+    "photo_link":"https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg",
+    "tag":"alesartorio"
+  }
+]

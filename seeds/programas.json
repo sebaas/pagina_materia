@@ -1,0 +1,79 @@
+[
+  {
+    "materia":"ingenieriadesoftware2",
+    "titulo":"Unidad I: Diseño de Software",
+    "plan":"2012",
+    "ubicacion":"1",
+    "tag":"unidad1"
+  },
+  {
+    "materia":"ingenieriadesoftware2",
+    "titulo":"El diseño como etapa del proceso de producción de software",
+    "plan":"2012",
+    "ubicacion":"1.1",
+    "tag":"unidad1.1"
+  },
+  {
+    "materia":"ingenieriadesoftware2",
+    "titulo":"Diseño vs. modelo funcional",
+    "plan":"2012",
+    "ubicacion":"1.2",
+    "tag":"unidad1.2"
+  },
+  {
+    "materia":"ingenieriadesoftware2",
+    "titulo":"Diseño basado en ocultación de información",
+    "plan":"2012",
+    "ubicacion":"1.3",
+    "tag":"unidad1.3"
+  },
+  {
+    "materia":"ingenieriadesoftware2",
+    "titulo":"Diseño basado en tipos abstractos de datos",
+    "plan":"2012",
+    "ubicacion":"1.4",
+    "tag":"unidad1.4"
+  },
+  {
+    "materia":"ingenieriadesoftware2",
+    "titulo":"Unidad II: Patrones de diseño",
+    "plan":"2012",
+    "ubicacion":"2",
+    "tag":"unidad2"
+  },
+  {
+    "materia":"ingenieriadesoftware2",
+    "titulo":"Vocabulario, conceptos y problemas",
+    "plan":"2012",
+    "ubicacion":"2.1",
+    "tag":"unidad2.1"
+  },
+  {
+    "materia":"ingenieriadesoftware2",
+    "titulo":"Un caso de estudio para la aplicación de patrones de diseño",
+    "plan":"2012",
+    "ubicacion":"2.2",
+    "tag":"unidad2.2"
+  },
+  {
+    "materia":"ingenieriadesoftware2",
+    "titulo":"Unidad III: Arquitecturas de software",
+    "plan":"2012",
+    "ubicacion":"3",
+    "tag":"unidad3"
+  },
+  {
+    "materia":"ingenieriadesoftware2",
+    "titulo":"Vocabulario, conceptos y problemas",
+    "plan":"2012",
+    "ubicacion":"3.1",
+    "tag":"unidad3.1"
+  },
+  {
+    "materia":"ingenieriadesoftware2",
+    "titulo":"Estilos arquitectónicos: llamada a procedimiento no es suficiente",
+    "plan":"2012",
+    "ubicacion":"3.2",
+    "tag":"unidad3.2"
+  }
+]

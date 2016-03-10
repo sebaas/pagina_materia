@@ -1,0 +1,41 @@
+md-dialog 
+  form
+    md-toolbar
+      .md-toolbar-tools
+        h2
+          | Docente {{docente.nombre}}
+    md-dialog-content
+      .md-dialog-content
+        md-input-container(ng-if="new_docente")
+          label
+            | Nombre
+          input(ng-model="docente.nombre")
+        md-input-container
+          label
+            | Email
+          input(ng-model="docente.email")
+        md-input-container
+          label
+            | Cargo
+          input(ng-model="docente.cargo")
+        md-input-container
+          label
+            | Photo Link
+          input(ng-model="docente.photo_link")
+        md-input-container
+          label
+            | Dirección
+          input(ng-model="docente.direccion")
+        md-input-container
+          label
+            | Teléfono
+          input(ng-model="docente.telefono")
+        md-input-container
+          label
+            | Link
+          input(ng-model="docente.link")
+    md-dialog-actions(layout="row")
+      md-button(ng-click="cancel()" style="margin-right:20px;")
+        | Cancel
+      md-button(ng-click="done(docente)" style="margin-right:20px;")
+        | Save

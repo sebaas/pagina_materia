@@ -2,11 +2,6 @@
   .doc-content.layout-padding(flex="noshrink")
     h2.md-display-1
       | Programa
-    span
-      p 
-        | Ingeniería de Software II es parte del cuarto año del plan de estudios de la Licenciatura en Ciencias de la Computación. El tema general de la materia es el diseño, arquitectura y testing de sistemas de software con especial énfasis en la confección de la documentación técnica específica.
-    span
-      p
-        | Esta página y la lista de interés ingsoft@fceia.unr.edu.ar están destinadas a ser usadas primordialmente como canales de comunicación entre docentes y alumnos de la cátedra de Ingeniería de Software. A pesar de la intención inicial, el público en general es bienvenido si desea utilizar ambos recursos para enriquecer la discusión sobre temas relativos a Ingeniería de Software o su enseñanza.
-
-
+    ol
+      li(ng-repeat="item in programas")
+        {{item.titulo}}

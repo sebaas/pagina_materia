@@ -1,0 +1,18 @@
+.layout-sm
+  .doc-content.layout-padding(flex="noshrink")
+    h2.md-display-1
+      | Evaluaciones
+    md-list(flex=100)
+      md-subheader.md-no-sticky 
+        | 2016
+      md-list-item.md-3-line(ng-repeat="item in examenes")
+        md-icon(md-font-library="material-icons")
+          | texture
+        .md-list-item-text(layout="column")
+          h3 
+            | {{ item.parte }}
+          p
+            | {{ item.fecha | date:'dd/MM/yyyy'}}
+        md-button.md-fab.md-mini(ng-click="viewExamen($index)")
+          md-icon(md-font-library="material-icons")
+            | remove_red_eye

@@ -1,0 +1,39 @@
+div(layout="column"  layout-fill="")
+  md-toolbar.md-whiteframe-glow-z1.site-content-toolbar.md-shadow-bottom-z-1.md-warn.md-hue-3(style="background:blue;", md-scroll-shrink="", md-shrink-speed-factor="0.1")
+    .too
+    div(layout-gt-xs="row")
+      h2.md-display-1.md-toolbar-tools
+        | Docentes
+      span(flex="")
+      md-button.md-fab(ng-click="toggleActive()")
+        md-icon(md-font-library="material-icons")
+          | edit
+  md-content(style="height: 700px;" md-theme="altTheme")
+    section(ng-repeat="(cargo, cargo_docentes) in docentes" ng-show="filtered.length > 0")
+      md-subheader.md-primary
+        | {{cargo}}
+      div(layout-gt-xs="row")
+        md-card(ng-repeat="docente in filtered = (cargo_docentes | filter:filters)")
+          md-card-title
+            md-card-title-text
+              span.md-headline
+                | {{docente.nombre}}
+              span
+              span.md-subhead
+                | {{docente.email}}
+            md-card-title-media
+              .md-media-lg(card-media="")
+                img(ng-src="{{docente.photo_link}}")
+            md-card-actions(layout="column" layout-align="end center")
+              md-button.md-icon-button(ng-show="editMode" ng-click="toggleDocente(docente)")
+                md-icon(md-font-library="material-icons")
+                  | {{docente.active ? "close" : "done"}}
+              md-button.md-icon-button(ng-show="editMode" ng-click="editDocente(docente)")
+                md-icon(md-font-library="material-icons")
+                  | edit
+              md-button.md-icon-button
+                md-icon(md-font-library="material-icons")
+                  | email
+    md-button.md-fab(ng-click="editDocente({})" ng-show="editMode")
+      md-icon(md-font-library="material-icons")
+        | add

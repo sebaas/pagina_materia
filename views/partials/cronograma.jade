@@ -1,0 +1,9 @@
+.layout-sm
+  .doc-content.layout-padding(flex="noshrink")
+    h2.md-display-1
+      | Cronograma
+    calendar-md(flex layout layout-fill calendar-direction="direction" on-prev-month="prevMonth" on-next-month="nextMonth" on-day-click="dayClick" title-format="'MMMM y'" ng-model='selectedDate' week-starts-on="firstDayOfWeek" data-start-month="2" data-start-year="2016" tooltips="tooltips" day-format="dayFormat" day-label-format="'EEE'"  day-label-tooltip-format="'EEEE'" day-tooltip-format="'fullDate'" day-content="setDayContent"  disable-future-selection="false")
+
+    md-button.md-fab(ng-click="addContent()")
+      md-icon(md-font-library="material-icons")
+        | edit
